@@ -16,7 +16,7 @@ function Word(wrd) {
     for(var i = 0; i < lets.length; i++) {
       if(Letter.charac === guessLetter) {
         Letter.appear = true;
-        // HW says to add 1 to checkIfLetterFound. I'm thinking it should say 'add 1 to whatToReturn' since checkIfLetterFound is a function and whatToReturn is an integer. Need to verify.
+        checkIfLetterFound++;
       }
     }
   } // End checkIfLetterFound()
