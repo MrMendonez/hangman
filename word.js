@@ -13,16 +13,17 @@ function Word(wrd) {
   } // End getLets()
   this.checkIfLetterFound = function(guessLetter) {
     this.whatToReturn = 0;
-    for(var i = 0; i < lets.length; i++) {
-      if(Letter.charac === guessLetter) {
-        Letter.appear = true;
+    for(var i = 0; i < this.lets.length; i++) {
+      if(this.lets[i].charac === guessLetter) {
+        this.lets[i].appear = true;
         whatToReturn++;
       }
     }
+    return whatToReturn;
   } // End checkIfLetterFound()
   this.didWeFindTheWord = function() {
     lets.every(function(curLet) {
-      if() {// Unsure how to write an if conditional that checks if all letter objects have the true value set for their appear property.
+      if() { // Unsure how to write an if conditional that checks if all letter objects have the true value set for their appear property.
 
         this.found = true;
       }
