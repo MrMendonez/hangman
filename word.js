@@ -19,5 +19,23 @@ function Word(wrd) {
         // HW says to add 1 to checkIfLetterFound. I'm thinking it should say 'add 1 to whatToReturn' since checkIfLetterFound is a function and whatToReturn is an integer. Need to verify.
       }
     }
+  } // End checkIfLetterFound()
+  this.didWeFindTheWord = function() {
+    lets.every(function(curLet) {
+      if() {// Unsure how to write an if conditional that checks if all letter objects have the true value set for their appear property.
+
+        this.found = true;
+      }
+      return found;
+    });
+  } // End didWeFindTheWord()
+  this.wordRender = function() {
+    this.str = "";
+    for(var i = 0; i < let.length; i++) {
+      // call the letterRender on that object and then string concatenate that to the varaible str
+    }
+    return str;
   }
 };
+
+module.exports = Word;
