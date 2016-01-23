@@ -1,0 +1,24 @@
+
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "A command line hangman game built with NodeJS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darryl Mendonez",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrMendonez/hangman"
+  },
+  "bugs": {
+    "url": "https://github.com/MrMendonez/hangman/issues"
+  },
+  "homepage": "https://github.com/MrMendonez/hangman#readme"
+}

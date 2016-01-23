@@ -16,7 +16,7 @@ function Word(wrd) {
     for(var i = 0; i < lets.length; i++) {
       if(Letter.charac === guessLetter) {
         Letter.appear = true;
-        checkIfLetterFound++;
+        whatToReturn++;
       }
     }
   } // End checkIfLetterFound()
