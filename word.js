@@ -1,18 +1,17 @@
 var Letter = require('./letter');
 
-function Word(wrd) {
+var Word = function(wrd) {
   this.word = wrd;
-  this.lets = [];
+  this.lets = []; // This is where the collected letters are pushed into
   this.found = false;
-  this.getLets = function() {
-    for(var i = 0; i < word.length; i++) {
-      word.split(' ');
-      this.lets = Letter(this.word[i]);
-      console.log("lets = " + this.lets);
+  this.getLets = function() { // This will collect letter objects and store them in array this.lets
+    for(var i = 0; i < this.word.length; i++) {
+      this.lets.push(new Letter(this.word[i]));
     }
-  } // End getLets()
+  }; // End getLets()
+
   this.checkIfLetterFound = function(guessLetter) {
-    this.whatToReturn = 0;
+    var whatToReturn = 0;
     for(var i = 0; i < this.lets.length; i++) {
       if(this.lets[i].charac === guessLetter) {
         this.lets[i].appear = true;
@@ -21,22 +20,21 @@ function Word(wrd) {
     }
     return whatToReturn;
   } // End checkIfLetterFound()
-  this.didWeFindTheWord = function() {
-    lets.every(function(curLet) {
-      if() { // Unsure how to write an if conditional that checks if all letter objects have the true value set for their appear property.
 
-        this.found = true;
-      }
-      return found;
+  this.didWeFindTheWord = function() {
+    this.found = this.lets.every(function(curLet) {
+      return curLet.appear;
     });
-  } // End didWeFindTheWord()
+    return this.found;
+  }; // End didWeFindTheWord()
+
   this.wordRender = function() {
     this.str = "";
-    for(var i = 0; i < let.length; i++) {
-      // call the letterRender on that object and then string concatenate that to the varaible str
+    for(var i = 0; i < this.let.length; i++) {
+      str += this.lets[i].letterRender();// call the letterRender on that object and then string concatenate that to the varaible str
     }
     return str;
   }
-};
+}; // end var Word()
 
 module.exports = Word;

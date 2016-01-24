@@ -1,12 +1,12 @@
-function Letter(let) {
+var Letter = function (let) {
   this.charac = let;
   this.appear = false;
   this.letterRender = function() {
-    if(appear === false) {
-      console.log("_"); // Should this be return or console.log?
+    if(this.appear === false) {
+      return " _ ";
     }
     else {
-      console.log(charac);
+      return this.charac;
     }
   }
 };
