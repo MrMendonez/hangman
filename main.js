@@ -4,7 +4,7 @@ var Word = require('./word');
 prompt.start();
 
 var game = {
-  wordBank: ["BLACK HAWK DOWN", "SHAUN OF THE DEAD", "ZOMBIELAND", "SAFETY NOT GUARANTEED", "SHERLOCK HOLMES", "UNSTOPPABLE", "FIGHT CLUB", "CRIMSON TIDE", "BAD BOYS"],
+  wordBank: ["black hawk down", "shaun of the dead", "zombieland", "safety not guaranteed", "sherlock holmes", "unstoppable", "fight club", "crimson tide", "bad boys"],
   guessesRemaining: 10,
   resetGuessesRemaining: function() { // Reset guessesRemaining when game ends and user begins new game.
     guessesRemaining = 10;
@@ -22,7 +22,13 @@ var game = {
   keepPropmtingUser: function() {
     var self = this;
     prompt.get(['guessLetter'], function(err, result) {
-      console.log("The letter or space you guessed is: " + result.guessLetter);
+      if(result.guessLetter === " ") {
+        console.log("The letter or space you guessed is: space");
+      }
+      else {
+        console.log("The letter or space you guessed is: " + result.guessLetter);
+      };
+      
       var findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
       if(findHowManyOfUserGuess === 0) {
         console.log("You guessed wrong!");
