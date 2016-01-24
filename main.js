@@ -6,10 +6,13 @@ prompt.start();
 var game = {
   wordBank: ["BLACK HAWK DOWN", "SHAUN OF THE DEAD", "ZOMBIELAND", "SAFETY NOT GUARANTEED", "SHERLOCK HOLMES", "UNSTOPPABLE", "FIGHT CLUB", "CRIMSON TIDE", "BAD BOYS"],
   guessesRemaining: 10,
+  resetGuessesRemaining: function() { // Reset guessesRemaining when game ends and user begins new game.
+    guessesRemaining = 10;
+  },
   currentWrd: null,
 
   startGame: function(wrd) {
-    // this.resetGuessesRemaining();
+    this.resetGuessesRemaining();
     var randomNumber = Math.floor(Math.random() * this.wordBank.length);
     this.currentWrd = new Word(this.wordBank[randomNumber]); // Choose a random word from wordBank array.
     this.currentWrd.getLets; // Called .getLets() method on the currentWrd object.
