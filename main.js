@@ -45,10 +45,26 @@ var game = {
         case 5:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
           break;
+        case 4:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " /       |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
+        case 3:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
+        case 2:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('sob') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
+        case 1:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('weary') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
+        case 0:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('dizzy_face') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
         default:
           console.log("Error loading hangman pole.")
       }
     }; // End stickFigure()
+    console.log("temp guesses remaining: " + self.guessesRemaining);
     stickFigure();
     prompt.get(['guessLetter'], function(err, result) {
       if(result.guessLetter === " ") {
@@ -92,6 +108,7 @@ var game = {
         self.keepPromptingUser();
       }
       else if(self.guessesRemaining === 0) {
+        stickFigure();
         console.log(emoji.get('dizzy_face') + " " + emoji.get('astonished') + " " + emoji.get('dizzy_face') + "  " + "Game over! You lose!" + " " + emoji.get('dizzy_face') + " " + emoji.get('astonished') + " " + emoji.get('dizzy_face'));
         console.log("The word was " + self.currentWrd.word.toUpperCase());
       }
