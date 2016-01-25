@@ -27,12 +27,17 @@ var game = {
     console.log("Letters chosen: " + this.lettersChosen + "\r\n");
     var stickFigure = function() {
       switch (self.guessesRemaining) {
+        case 10:
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+            break;
         case 9:
           console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
           break;
-        case 10:
+        case 8:
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+          break;
         default:
-          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+          console.log("Error loading hangman pole.")
       }
     }; // End stickFigure()
     stickFigure();
