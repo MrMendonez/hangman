@@ -22,46 +22,79 @@ var game = {
 
   keepPromptingUser: function() {
     var self = this;
-    console.log(self.currentWrd.wordRender());
-    console.log("\r\nChoose a letter or space.")
-    console.log("Letters chosen: " + this.lettersChosen + "\r\n");
     var stickFigure = function() {
       switch (self.guessesRemaining) {
         case 10:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
             break;
         case 9:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" + "  " + emoji.get('hushed') + "      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 8:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + "  |      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 7:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 6:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 5:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 4:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " /       |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 3:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 2:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('sob') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 1:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('weary') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         case 0:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('dizzy_face') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "  |      |" + "\r\n" + " / \\     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
           break;
         default:
           console.log("Error loading hangman pole.")
+          console.log(self.currentWrd.wordRender());
+          console.log("\r\nLetters chosen: " + self.lettersChosen + "\r");
+          console.log("\r\nChoose a letter or space.")
       }
     }; // End stickFigure()
     stickFigure();
@@ -96,7 +129,7 @@ var game = {
         numberOfLettersMsg();
         if(self.currentWrd.didWeFindTheWord() === true) {
           console.log ("The answer was " + self.currentWrd.word.toUpperCase());
-          console.log("\r\n" +"  " + emoji.get('smiley') + "      " + "\r\n" + " \\|/     " + "\r\n" + "  |      " + "\r\n" + " / \\      ");
+          console.log("\r\n" +"  " + emoji.get('smiley') + "      " + "\r\n" + " \\|/     " + "\r\n" + "  |      " + "\r\n" + " / \\      " + "\r\n");
           console.log(emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks') + "  " + "You won!" + " " + emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks'));
           return 1; // This ends the game.
         }
@@ -113,7 +146,7 @@ var game = {
         console.log("The word was " + self.currentWrd.word.toUpperCase());
       }
       else {
-        console.log(self.currentWrd.wordRender());
+        // console.log(self.currentWrd.wordRender());
       }
     });
   }
