@@ -32,9 +32,9 @@ var Word = function(wrd) {
   };
 
   this.wordRender = function() {
-    this.str = "";
-    for(var i = 0; i < this.let.length; i++) {
-      str += this.lets[i].letterRender(this.lets[i]);// call the letterRender on that object and then string concatenate that to the varaible str
+    var str = "";
+    for(var i = 0; i < this.lets.length; i++) {
+      str += this.lets[i].letterRender(this.lets[i]); // call the letterRender on that object and then string concatenate that to the varaible str
     }
     return str;
   }

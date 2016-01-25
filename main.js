@@ -40,7 +40,7 @@ var game = {
         }
         else {
           console.log("Guesses remaining: " + self.guessesRemaining);
-          console.log(this.currentWrd.wordRender());
+          console.log(self.currentWrd.wordRender());
         }
       } 
       if((self.guessesRemaining > 0) && (self.currentWrd.found === false)) {
