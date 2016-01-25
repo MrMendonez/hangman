@@ -13,11 +13,14 @@ var game = {
     var word = new Word(this.wordBank[randomNumber]); // Choose a random word from wordBank array.
     this.currentWrd = word;
     this.currentWrd.getLets();
+    console.log("\r\n" + "Lets play Hangman!" + "\r\n\r\n" + "The category is movies." + "\r");
     this.keepPromptingUser();
   }, // End startGame()
 
   keepPromptingUser: function() {
     var self = this;
+    console.log(self.currentWrd.wordRender());
+    console.log("\r")
     prompt.get(['guessLetter'], function(err, result) {
       if(result.guessLetter === " ") {
         console.log("The letter or space you guessed is: space");
@@ -31,6 +34,8 @@ var game = {
       if(findHowManyOfUserGuess === 0) {
         console.log("You guessed wrong!");
         self.guessesRemaining--;
+        console.log("Guesses remaining: " + self.guessesRemaining);
+        // console.log(self.currentWrd.wordRender());
       }
       else {
         console.log("You guessed right!");
@@ -40,7 +45,7 @@ var game = {
         }
         else {
           console.log("Guesses remaining: " + self.guessesRemaining);
-          console.log(self.currentWrd.wordRender());
+          // console.log(self.currentWrd.wordRender());
         }
       } 
       if((self.guessesRemaining > 0) && (self.currentWrd.found === false)) {
