@@ -29,7 +29,7 @@ var Word = function(wrd) {
     }) === true) {
       return true;
     }
-  };
+  }; // End didWeFindTheWord()
 
   this.wordRender = function() {
     var str = "";
@@ -37,7 +37,11 @@ var Word = function(wrd) {
       str += this.lets[i].letterRender(this.lets[i]); // call the letterRender on that object and then string concatenate that to the varaible str
     }
     return str;
-  }
+  }; // End wordRender()
+
+  // this.replay = function(playAgain) {
+  //   startGame();
+  // }
 }; // end var Word()
 
 module.exports = Word;
