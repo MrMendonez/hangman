@@ -1,5 +1,6 @@
 var prompt = require('prompt');
 var Word = require('./word');
+var emoji = require('node-emoji');
 
 prompt.start();
 
@@ -14,7 +15,8 @@ var game = {
     var word = new Word(this.wordBank[randomNumber]); // Choose a random word from wordBank array.
     this.currentWrd = word;
     this.currentWrd.getLets();
-    console.log("\r\n" + "Lets play Hangman!" + "\r\n\r\n" + "The category is movies." + "\r\n");
+    console.log("\r\n" + "Lets play Hangman! " + emoji.get('grinning') + "\r\n\r\n");
+    console.log("The category is movies." + emoji.get('movie_camera') + "\r\n");
     this.keepPromptingUser();
   }, // End startGame()
 
@@ -23,6 +25,7 @@ var game = {
     console.log(self.currentWrd.wordRender());
     console.log("\r\nChoose a letter or space.")
     console.log("Letters chosen: " + this.lettersChosen + "\r\n");
+    console.log("-------" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |");
     prompt.get(['guessLetter'], function(err, result) {
       if(result.guessLetter === " ") {
         console.log("The letter or space you guessed is: space");
@@ -45,17 +48,17 @@ var game = {
         }
       }; // End numberOfLetters()
       if(findHowManyOfUserGuess === 0) {
-        console.log("You guessed wrong!");
+        console.log("You guessed wrong!" + emoji.get('dizzy_face'));
         numberOfLettersMsg();
         self.guessesRemaining--;
         console.log("Guesses remaining: " + self.guessesRemaining);
       }
       else {
-        console.log("You guessed right!");
+        console.log("You guessed right!" + emoji.get('smiley'));
         numberOfLettersMsg();
         if(self.currentWrd.didWeFindTheWord() === true) {
           console.log ("The answer was " + self.currentWrd.word.toUpperCase())
-          console.log("You won!");
+          console.log(emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks') + "  " + "You won!" + " " + emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks'));
           return 1; // This ends the game.
         }
         else {
@@ -66,7 +69,7 @@ var game = {
         self.keepPromptingUser();
       }
       else if(self.guessesRemaining === 0) {
-        console.log("Game Over. You lose.");
+        console.log(emoji.get('dizzy_face') + " " + emoji.get('astonished') + " " + emoji.get('dizzy_face') + "  " + "Game over! You lose!" + " " + emoji.get('dizzy_face') + " " + emoji.get('astonished') + " " + emoji.get('dizzy_face'));
         console.log("The word was " + self.currentWrd.word.toUpperCase());
       }
       else {
