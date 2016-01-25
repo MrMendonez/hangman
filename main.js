@@ -16,7 +16,7 @@ var game = {
     this.currentWrd = word;
     this.currentWrd.getLets();
     console.log("\r\n" + "Lets play Hangman! " + emoji.get('grinning') + "\r\n\r\n");
-    console.log("The category is movies." + emoji.get('movie_camera') + "\r\n");
+    console.log("The category is movies." + emoji.get('tv') + "\r\n");
     this.keepPromptingUser();
   }, // End startGame()
 
@@ -25,14 +25,14 @@ var game = {
     console.log(self.currentWrd.wordRender());
     console.log("\r\nChoose a letter or space.")
     console.log("Letters chosen: " + this.lettersChosen + "\r\n");
-    var findHowManyOfUserGuess = 0;
     var stickFigure = function() {
-      switch (findHowManyOfUserGuess) {
-        case 1:
-          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+      switch (self.guessesRemaining) {
+        case 9:
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "\r\n" + "    -------");
           break;
+        case 10:
         default:
-        console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
       }
     }; // End stickFigure()
     stickFigure();
@@ -44,8 +44,7 @@ var game = {
         console.log("The letter or space you guessed is: " + result.guessLetter);
       };
       self.lettersChosen.push(result.guessLetter);
-      
-      findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
+      var findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
       var numberOfLettersMsg = function() {
         if(findHowManyOfUserGuess === 0) {
           console.log("There are no " + result.guessLetter + "'s.");
