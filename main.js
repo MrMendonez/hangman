@@ -40,6 +40,7 @@ var game = {
       else {
         console.log("You guessed right!");
         if(self.currentWrd.didWeFindTheWord() === true) {
+          console.log ("The answer was " + self.currentWrd.wordRender())
           console.log("You won!");
           return 1; // This ends the game.
         }

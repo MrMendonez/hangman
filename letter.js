@@ -6,7 +6,12 @@ function Letter(let) {
       return " _ ";
     }
     else {
-      return this.charac;
+      if(this.charac === " ") {
+        return "  ";
+      }
+      else {
+        return this.charac;
+      }
     }
   }
 };
