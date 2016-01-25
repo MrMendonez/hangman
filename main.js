@@ -40,7 +40,7 @@ var game = {
       else {
         console.log("You guessed right!");
         if(self.currentWrd.didWeFindTheWord() === true) {
-          console.log ("The answer was " + self.currentWrd.wordRender())
+          console.log ("The answer was " + self.currentWrd.word.toUpperCase())
           console.log("You won!");
           return 1; // This ends the game.
         }
@@ -54,7 +54,7 @@ var game = {
       }
       else if(self.guessesRemaining === 0) {
         console.log("Game Over. You lose.");
-        console.log("The word was " + self.currentWrd.word);
+        console.log("The word was " + self.currentWrd.word.toUpperCase());
       }
       else {
         console.log(self.currentWrd.wordRender());
