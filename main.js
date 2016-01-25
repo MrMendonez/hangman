@@ -39,7 +39,9 @@ var game = {
         case 7:
           console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|      |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
           break;
-
+        case 6:
+          console.log("   ______" + "\r\n" + "  |      |" + "\r\n" +"  " + emoji.get('hushed') + "      |" + "\r\n" + " \\|/     |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "         |" + "\r\n" + "      -------");
+          break;
         default:
           console.log("Error loading hangman pole.")
       }
