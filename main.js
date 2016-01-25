@@ -25,7 +25,17 @@ var game = {
     console.log(self.currentWrd.wordRender());
     console.log("\r\nChoose a letter or space.")
     console.log("Letters chosen: " + this.lettersChosen + "\r\n");
-    console.log("-------" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |");
+    var findHowManyOfUserGuess = 0;
+    var stickFigure = function() {
+      switch (findHowManyOfUserGuess) {
+        case 1:
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+          break;
+        default:
+        console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+      }
+    }; // End stickFigure()
+    stickFigure();
     prompt.get(['guessLetter'], function(err, result) {
       if(result.guessLetter === " ") {
         console.log("The letter or space you guessed is: space");
@@ -35,7 +45,7 @@ var game = {
       };
       self.lettersChosen.push(result.guessLetter);
       
-      var findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
+      findHowManyOfUserGuess = self.currentWrd.checkIfLetterFound(result.guessLetter);
       var numberOfLettersMsg = function() {
         if(findHowManyOfUserGuess === 0) {
           console.log("There are no " + result.guessLetter + "'s.");
