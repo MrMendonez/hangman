@@ -1,4 +1,4 @@
-var Letter = function(let) {
+function Letter(let) {
   this.charac = let;
   this.appear = false;
   this.letterRender = function() {

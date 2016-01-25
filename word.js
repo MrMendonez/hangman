@@ -6,7 +6,9 @@ var Word = function(wrd) {
   this.found = false;
   this.getLets = function() { // This will collect letter objects and store them in array this.lets
     for(var i = 0; i < this.word.length; i++) {
-      this.lets.push(new Letter(this.word[i]));
+      var letter = this.word.charAt(i);
+      var let = new Letter(letter);
+      this.lets.push(let);
     }
   }; // End getLets()
 
@@ -22,16 +24,17 @@ var Word = function(wrd) {
   } // End checkIfLetterFound()
 
   this.didWeFindTheWord = function() {
-    this.found = this.lets.every(function(curLet) {
-      return curLet.appear;
-    });
-    return this.found;
-  }; // End didWeFindTheWord()
+    if(this.lets.every(function(curLet){
+      return curLet.appear === true;
+    }) === true) {
+      return true;
+    }
+  };
 
   this.wordRender = function() {
     this.str = "";
     for(var i = 0; i < this.let.length; i++) {
-      str += this.lets[i].letterRender();// call the letterRender on that object and then string concatenate that to the varaible str
+      str += this.lets[i].letterRender(this.lets[i]);// call the letterRender on that object and then string concatenate that to the varaible str
     }
     return str;
   }
