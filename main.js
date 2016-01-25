@@ -64,7 +64,6 @@ var game = {
           console.log("Error loading hangman pole.")
       }
     }; // End stickFigure()
-    console.log("temp guesses remaining: " + self.guessesRemaining);
     stickFigure();
     prompt.get(['guessLetter'], function(err, result) {
       if(result.guessLetter === " ") {
@@ -96,7 +95,8 @@ var game = {
         console.log("You guessed right!" + emoji.get('smiley'));
         numberOfLettersMsg();
         if(self.currentWrd.didWeFindTheWord() === true) {
-          console.log ("The answer was " + self.currentWrd.word.toUpperCase())
+          console.log ("The answer was " + self.currentWrd.word.toUpperCase());
+          console.log("\r\n" +"  " + emoji.get('smiley') + "      " + "\r\n" + " \\|/     " + "\r\n" + "  |      " + "\r\n" + " / \\      ");
           console.log(emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks') + "  " + "You won!" + " " + emoji.get('fireworks') + " " + emoji.get('sparkler') + " " + emoji.get('fireworks'));
           return 1; // This ends the game.
         }
