@@ -28,11 +28,11 @@ var game = {
     var stickFigure = function() {
       switch (self.guessesRemaining) {
         case 9:
-          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "\r\n" + "    -------");
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
           break;
         case 10:
         default:
-          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + emoji.get('hushed') + "      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
+          console.log(" ______" + "\r\n" + "|      |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "       |" + "\r\n" + "    -------");
       }
     }; // End stickFigure()
     stickFigure();
